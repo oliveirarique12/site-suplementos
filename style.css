@@ -1,0 +1,66 @@
+/** 
+Folha de estilo do site SupLife
+@author Henrique Fortunato de Oliveira
+**/
+
+
+/* _________________________Layout ________________________ */
+
+/* Variáveis */
+:root{
+    --VerdeClaro: #52A244;
+    --VerdeEscuro: #001E23;
+    --VerdeMesclado: #006557;
+    --Preto: #000000;
+
+
+}
+
+/* CSS Reset */
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", "sans-serif"
+}
+/* ___________________________FIM DO LAYOUT__________________ */
+
+/* SMARTPHONE PORTRAIT */
+
+/* FIM DO PORTRAIT */
+
+
+/* Smartphonen landscape */
+
+@media(min-width: 576px) {
+
+}
+/* __________________________FIM DO SMARTPHONE_____________ */
+
+/* TABLET PORTRAIT */
+
+@media(min-width){}
+
+
+/* Tablet landscape */
+
+@media(min-width: 992px) {
+
+}
+/* _____________________________FIM DO TABLET_____________________ */
+
+/* NOTEBOOK / PC - HD */
+@media(min-width: 1400px) {
+
+}
+
+/* _________________________________FIM DO NOTEBOOK/HD___________________ */
+
+@media(min-width:1400px) {
+
+}
+
+/* ____________________________________FIM DO NOTEBOOK 4K_____________________ */
