@@ -12,6 +12,8 @@ Folha de estilo do site SupLife
     --VerdeEscuro: #001E23;
     --VerdeMesclado: #006557;
     --Preto: #000000;
+    --Branco: #FFFFFF;
+    
 
 
 }
@@ -24,20 +26,89 @@ Folha de estilo do site SupLife
 }
 
 body{
-    font-family: "Poppins", "sans-serif"
+    font-family: "Poppins", "sans-serif";
 }
+
+.container{
+    display: flex;
+}
+
+
 /* ___________________________FIM DO LAYOUT__________________ */
 
 /* SMARTPHONE PORTRAIT */
+/* >>>>>>>>>>>>>>>>>>>>Cabeçalho */
 
+header{
+    height: 60px;
+    background-color: var(--VerdeClaro);
+}
+
+.logo img{
+    width: 128px;
+    height: 128px;
+    margin-top: 0px;
+    margin-left: 20px;
+
+}
+
+#check {
+    display: none;
+}
+
+label{
+    font-size: 3rem;
+    color: rgba(40, 255, 94, 0.75); 
+    position: fixed;
+    top: 5px;
+    right: 15px;
+}
+
+nav ul{
+    list-style: none;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    background-color: rgba(165, 243, 185, 0.75);
+    width: 65%;
+    right: -65%;
+    transition: all 0.5s;
+}
+
+/* Ação para caixa check */
+/* Quando selecionada mudar ul */
+
+
+#check:checked~ul{
+    right: 0px;
+    background-color: #affcac;
+}
+
+
+nav ul li{
+    padding: 20px;
+    border-bottom: 1px solid var(--VerdeClaro);
+    text-align: right;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--Preto)
+}
 /* FIM DO PORTRAIT */
 
 
 /* Smartphonen landscape */
 
-@media(min-width: 576px) {
-
+@media(min-width: 576px){
+    nav ul{
+        width: 40%;
+        right: -40%;
+    }
 }
+    
 /* __________________________FIM DO SMARTPHONE_____________ */
 
 /* TABLET PORTRAIT */
@@ -54,6 +125,36 @@ body{
 
 /* NOTEBOOK / PC - HD */
 @media(min-width: 1400px) {
+    header{
+        height: 100px;
+
+    }
+
+    .logo img{
+        width: 190px;
+        height: 190px;
+    }
+
+    label{
+        display: none;
+    }
+
+    nav ul{
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+    }
+
+    nav ul li{
+        float: left;
+        border: 0;
+    }
+
+    nav ul li a:hover{
+        color: var(--Branco);
+    }
+
 
 }
 
