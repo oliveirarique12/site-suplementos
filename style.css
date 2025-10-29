@@ -7,44 +7,56 @@ Folha de estilo do site SupLife
 /* _________________________Layout ________________________ */
 
 /* Variáveis */
-:root{
+:root {
     --VerdeClaro: #52A244;
     --VerdeEscuro: #001E23;
     --VerdeMesclado: #006557;
     --Preto: #000000;
     --Branco: #FFFFFF;
-    
+
 
 
 }
 
 /* CSS Reset */
-*{
-    margin: 0; 
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Poppins", "sans-serif";
 }
 
-.container{
+.container {
     display: flex;
+    margin: 0 auto;
 }
 
+/* Botão */
+.btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: var(--VerdeClaro);
+    padding: 10px 40px;
+    color: var(--Branco);
+    border-radius: 25px;
+    border: 2px solid var(--Branco);
+}
 
 /* ___________________________FIM DO LAYOUT__________________ */
 
 /* SMARTPHONE PORTRAIT */
 /* >>>>>>>>>>>>>>>>>>>>Cabeçalho */
 
-header{
-    height: 60px;
+header {
+    height: 100px;
     background-color: var(--VerdeClaro);
 }
 
-.logo img{
+.logo img {
     width: 128px;
     height: 128px;
     margin-top: 0px;
@@ -56,15 +68,15 @@ header{
     display: none;
 }
 
-label{
+label {
     font-size: 3rem;
-    color: rgba(40, 255, 94, 0.75); 
+    color: rgba(40, 255, 94, 0.75);
     position: fixed;
     top: 5px;
     right: 15px;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     height: 100vh;
     position: fixed;
@@ -80,79 +92,181 @@ nav ul{
 /* Quando selecionada mudar ul */
 
 
-#check:checked~ul{
+#check:checked~ul {
     right: 0px;
     background-color: #affcac;
 }
 
 
-nav ul li{
+nav ul li {
     padding: 20px;
     border-bottom: 1px solid var(--VerdeClaro);
     text-align: right;
 
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: var(--Preto)
 }
+
+/* Principal */
+main {
+    height: 70vh;
+    background: url(img/foresta.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+main .container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: #ffffff;
+    font-family: sans-serif;
+
+}
+
+main h2 {
+    color: #bdf8bb;
+    font-size: 1.85rem;
+    margin-bottom: 30px;
+
+
+}
+
 /* FIM DO PORTRAIT */
 
 
 /* Smartphonen landscape */
 
-@media(min-width: 576px){
-    nav ul{
+@media(min-width: 576px) {
+
+    /* Layout */
+    .container {
+        max-width: 540px;
+    }
+
+    /* Cabeçalho */
+    nav ul {
         width: 40%;
         right: -40%;
     }
+
+    /* Principal */
+    main {
+        height: 75vh;
+    }
+
+    main h1 {
+        font-size: 2.75rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
 }
-    
+
+
+/* Principal */
+main {
+    height: 75vh;
+}
+
+main h1 {
+    font-size: 2.75rem;
+}
+
+main h2 {
+    font-size: 2.5rem;
+}
+
 /* __________________________FIM DO SMARTPHONE_____________ */
 
 /* TABLET PORTRAIT */
 
-@media(min-width){}
+@media(min-width: 768px) {
+
+    /* Layout */
+    .container {
+        max-width: 720px;
+    }
+
+    /* Principal */
+    main h1 {
+        font-size: 3.9rem;
+    }
+
+    main h2 {
+        font-size: 3rem;
+    }
+}
+
+/* FIM DO PORTRAIT */
 
 
 /* Tablet landscape */
 
 @media(min-width: 992px) {
 
+    /* Layout */
+    .container {
+        max-width: 960px;
+    }
+
 }
+
 /* _____________________________FIM DO TABLET_____________________ */
 
 /* NOTEBOOK / PC - HD */
-@media(min-width: 1400px) {
-    header{
+@media(min-width: 1200px) {
+
+    /* Layout */
+    .container {
+        justify-content: space-between;
+        max-width: 1140px;
+    }
+
+    /* Cabeçalho */
+    header {
         height: 100px;
 
     }
 
-    .logo img{
+    .logo img {
         width: 190px;
         height: 190px;
     }
 
-    label{
+    label {
         display: none;
     }
 
-    nav ul{
+    nav ul {
         position: static;
         width: 100%;
         height: auto;
         background-color: transparent;
+        margin-top: 20px;
     }
 
-    nav ul li{
+    nav ul li {
         float: left;
         border: 0;
     }
 
-    nav ul li a:hover{
+    nav ul li a:hover {
         color: var(--Branco);
+    }
+
+    /* Principal */
+    main {
+        height: 85vh;
     }
 
 
@@ -160,7 +274,18 @@ nav ul li a{
 
 /* _________________________________FIM DO NOTEBOOK/HD___________________ */
 
+/* __________________________________NOTEBOOK 4K_________________________ */
+
 @media(min-width:1400px) {
+
+    /* Layout */
+    .container {
+        max-width: 1320px;
+    }
+
+    main h1 {
+        font-size: 6rem;
+    }
 
 }
 
