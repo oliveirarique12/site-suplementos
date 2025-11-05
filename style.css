@@ -1,49 +1,44 @@
 /** 
-Folha de estilo do site SupLife
-@author Henrique Fortunato de Oliveira
+Folha de estilo do site Neon Play
+@author Henrique Fortunato
 **/
-
 
 /* _________________________Layout ________________________ */
 
 /* Variáveis */
 :root {
-    --Preto: #000000;
-    --Rosa: #FF92F7;
-    --Azul: #00EFEF;
-    --Preto: #000000;
-    --Branco: #FFFFFF;
-
-
-
+  --Preto: #000000;
+  --Rosa: #FF92F7;
+  --Azul: #00EFEF;
+  --Branco: #FFFFFF;
 }
 
 /* CSS Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Poppins", "sans-serif";
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
-    display: flex;
-    margin: 0 auto;
+  display: flex;
+  margin: 0 auto;
 }
 
 /* Botão */
 .btn {
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 700;
-    background-color: var(--Preto);
-    padding: 10px 40px;
-    color: var(--Branco);
-    border-radius: 25px;
-    border: 2px solid var(--Azul);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background-color: var(--Preto);
+  padding: 10px 40px;
+  color: var(--Branco);
+  border-radius: 25px;
+  border: 2px solid var(--Azul);
 }
 
 /* ___________________________FIM DO LAYOUT__________________ */
@@ -52,323 +47,254 @@ body {
 /* >>>>>>>>>>>>>>>>>>>>Cabeçalho */
 
 header {
-    height: 100px;
-    background-color: var(--Preto);
+  position: fixed; /* fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 100px;
+  background-color: var(--Preto);
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    width: 128px;
-    height: 100px;
-    margin-top: 0px;
-    margin-left: 20px;
-
+  width: 128px;
+  height: 100px;
+  margin-left: 20px;
 }
 
+/* Checkbox invisível para ativar menu */
 #check {
-    display: none;
+  display: none;
 }
 
-label {
-    font-size: 3rem;
-    color: rgb(218, 96, 248);
-    position: fixed;
-    top: 8px;
-    right: 55px;
+/* Ícone do menu hamburguer */
+label.menu-icon {
+  font-size: 2.8rem;
+  color: var(--Azul);
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  z-index: 1100;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
+/* leve invasão na área azul (efeito desejado) */
+label.menu-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Menu lateral (mobile) */
 nav ul {
-    list-style: none;
-    height: 100vh;
-    position: fixed;
-    top: 60px;
-    right: 0px;
-    background-color: rgba(0, 0, 0, 0.75);
-    width: 65%;
-    right: -65%;
-    transition: all 0.5s;
+  list-style: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -65%;
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.5s ease;
+  padding-top: 100px; /* abaixo do cabeçalho */
 }
 
 /* Ação para caixa check */
-/* Quando selecionada mudar ul */
-
-
-#check:checked~ul {
-    right: 0px;
-    background-color: #00EFEF;
+#check:checked ~ ul {
+  right: 0;
 }
 
-
+/* Itens do menu */
 nav ul li {
-    padding: 20px;
-    border-bottom: 1px solid var(--Preto);
-    text-align: right;
-
+  padding: 20px;
+  border-bottom: 1px solid var(--Azul);
+  text-align: right;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: var(--Preto)
+  text-decoration: none;
+  color: var(--Branco);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
 
-/* Principal */
+nav ul li a:hover {
+  color: var(--Azul);
+}
+
+/* __________________________PRINCIPAL__________________ */
 main {
-    height: 70vh;
-    background: url(img/unnamed.jpg);
-    background-size: cover;
-    background-position: center;
-    text-align: center;
+  height: 70vh;
+  background: url(img/unnamed.jpg) center/cover no-repeat;
+  text-align: center;
+  margin-top: 100px; /* compensa header fixo */
 }
 
 main .container {
-    height: 119%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 main h1 {
-    color: #faf1f7;
-    font-family: sans-serif;
-
+  color: #faf1f7;
+  font-family: sans-serif;
 }
 
 main h2 {
-    color: #00EFEF;
-    font-size: 1.00rem;
-    margin-bottom: 30px;
-
-
+  color: #00EFEF;
+  font-size: 1rem;
+  margin-bottom: 30px;
 }
 
-/* Destaque */
-
-#destque{
-    padding: 50px 10px;
-    background: url(./img/banner2.png);
-    background-size: cover;
-    background-position: center;
+/* __________________________DESTAQUE__________________ */
+#destaque {
+  padding: 50px 10px;
+  background: url(./img/banner2.png) center/cover no-repeat;
+  min-height: 100vh;
 }
 
-#destauqe.container{
-    flex-direction: column;
+#destaque .container {
+  flex-direction: column;
 }
 
-#hero{
-    text-align: center;
+#hero {
+  text-align: center;
 }
 
-#hero img{
-    width: 300px;
-    height: 300px;
-    margin-bottom: 25px;
+#hero img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 25px;
+  object-fit: contain;
 }
 
-.hero-text h2{
-    font-size: 1.6rem;
-    color: (var(--Branco));
-    margin-bottom: 15px;
-}
-.hero-text p{
-    color: var(--Preto);
+.hero-text h2 {
+  font-size: 1.6rem;
+  color: var(--Branco);
+  margin-bottom: 15px;
 }
 
-.topic{
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
+.hero-text p {
+  color: var(--Branco);
 }
 
-.topic p{
-    margin-left: 15px;
-}
-/* FIM DO PORTRAIT */
-
-
-/* Smartphonen landscape */
-
-@media(min-width: 576px) {
-
-    /* Layout */
-    .container {
-        max-width: 540px;
-    }
-
-    /* Cabeçalho */
-    nav ul {
-        width: 40%;
-        right: -40%;
-    }
-
-    /* Principal */
-    main {
-        height: 75vh;
-    }
-
-    main h1 {
-        font-size: 2.75rem;
-    }
-
-    main h2 {
-        font-size: 2.5rem;
-    }
+/* Ícones de tópicos */
+.topic {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
-
-/* Principal */
-main {
-    height: 75vh;
+.topic img {
+  width: 40px;
+  height: 40px;
 }
 
-main h1 {
-    font-size: 2.75rem;
+.topic p {
+  margin-left: 15px;
+  color: var(--Branco);
+  font-weight: 500;
 }
 
-main h2 {
-    font-size: 2.5rem;
-}
+/* __________________________FIM DO PORTRAIT_____________ */
 
-/* Destaque */
-#destaque{
-    padding: 50px 0px;
-}
+/* TABLET E NOTEBOOKS */
 
-#destaque.container{
-    flex-direction: row;
-    align-items: center;
-}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
 
-#hero{
-    text-align: left;
-}
+  main h1 {
+    font-size: 3rem;
+  }
 
-#hero img{
-    width: 200px;
-    height: 200px;
-    margin: 0px 30px 0px 0px;
-}
-
-.topic{
-    display: none;
-}
-
-/* __________________________FIM DO SMARTPHONE_____________ */
-
-/* TABLET PORTRAIT */
-
-@media(min-width: 768px) {
-
-    /* Layout */
-    .container {
-        max-width: 720px;
-    }
-
-    /* Principal */
-    main h1 {
-        font-size: 3.9rem;
-    }
-
-    main h2 {
-        font-size: 3rem;
-    }
-}
-
-/* FIM DO PORTRAIT */
-
-
-/* Tablet landscape */
-
-@media(min-width: 992px) {
-
-    /* Layout */
-    .container {
-        max-width: 960px;
-    }
-
-}
-
-/* _____________________________FIM DO TABLET_____________________ */
-
-/* NOTEBOOK / PC - HD */
-@media(min-width: 1200px) {
-
-    /* Layout */
-    .container {
-        justify-content: space-between;
-        max-width: 1010px;
-    }
-
-    /* Cabeçalho */
-    header {
-        height: 100px;
-
-    }
-
-    .logo img {
-        width: 190px;
-        height: 190px;
-    }
-
-    label {
-        display: none;
-    }
-
-    nav ul {
-        position: static;
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        margin-top: 20px;
-    }
-
-    nav ul li {
-        float: left;
-        border: 0;
-    }
-
-    nav ul li a:hover {
-        color: var(--Branco);
-    }
-
-    /* Principal */
-    main {
-        height: 85vh;
-    }
-
-    /* Destaque */
-    #destaque{
-        background-attachment: fixed; 
-    }
-/* Efeito paralax */
-}
-
-#hero img{
-    width: 400px;
-    height: 400px;
-}
-
-.hero-text h2{
+  main h2 {
     font-size: 2rem;
+  }
 }
 
-.topic{
+/* NOTEBOOK / PC */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  /* Remove menu hamburguer no desktop */
+  label.menu-icon {
+    display: none;
+  }
+
+  nav ul {
+    position: static;
     display: flex;
+    height: auto;
+    width: auto;
+    background: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    border: none;
+    margin-left: 30px;
+  }
+
+  nav ul li a {
+    color: var(--Branco);
+  }
+
+  nav ul li a:hover {
+    color: var(--Azul);
+  }
+
+  /* Hero e destaque */
+  #destaque .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #hero {
+    text-align: left;
+  }
+
+  #hero img {
+    width: 350px;
+    height: auto;
+  }
+
+  .hero-text {
+    max-width: 500px;
+  }
+
+  .topic {
+    display: flex;
+  }
 }
 
-/* _________________________________FIM DO NOTEBOOK/HD___________________ */
+/* 4K */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 
-/* __________________________________NOTEBOOK 4K_________________________ */
-
-@media(min-width:1400px) {
-
-    /* Layout */
-    .container {
-        max-width: 1320px;
-    }
-
-    main h1 {
-        font-size: 6rem;
-    }
-
+  main h1 {
+    font-size: 5rem;
+  }
 }
-
-/* ____________________________________FIM DO NOTEBOOK 4K_____________________ */
