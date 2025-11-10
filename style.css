@@ -39,29 +39,45 @@ body {
   color: var(--Branco);
   border-radius: 25px;
   border: 2px solid var(--Azul);
+  margin: 25px;
+}
+/*_____________________________ Cartões_______________________ */
+.card{
+  width: 340px;
+  height: 520px;
+  background-color: var(--Branco);
+  margin-top: 25px;
+  border: 2px solid var(--Preto);
 }
 
+.card img{
+  /* border-radius: 25px 25px 0px 0px; */
+}
+.card h2{
+  font-size: 1.3rem;
+  margin: 15px 0px;
+}
+.card p {
+  color: var(--Azul);
+  text-align: left;
+  padding: 0px 10px 30px 10px;
+}
 /* ___________________________FIM DO LAYOUT__________________ */
 
-/* SMARTPHONE PORTRAIT */
-/* >>>>>>>>>>>>>>>>>>>>Cabeçalho */
+
+
+/* SMARTPHONE PORTRAIT______________________________________ */
+
+/*____________________________Cabeçalho_____________________ */
 
 header {
-  position: fixed; /* fixo no topo */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
   height: 100px;
   background-color: var(--Preto);
-  display: flex;
-  align-items: center;
 }
 
 .logo img {
   width: 128px;
-  height: 100px;
-  margin-left: 20px;
+  height: 128px;
 }
 
 /* Checkbox invisível para ativar menu */
@@ -70,20 +86,13 @@ header {
 }
 
 /* Ícone do menu hamburguer */
-label.menu-icon {
-  font-size: 2.8rem;
+label {
+  font-size: 3rem;
   color: var(--Azul);
   position: fixed;
   top: 15px;
   right: 25px;
-  z-index: 1100;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-
-/* leve invasão na área azul (efeito desejado) */
-label.menu-icon:hover {
-  transform: translateY(-2px) scale(1.05);
 }
 
 /* Menu lateral (mobile) */
@@ -91,21 +100,22 @@ nav ul {
   list-style: none;
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 100px;
   right: -65%;
   width: 65%;
   background-color: rgba(0, 0, 0, 0.9);
   transition: all 0.5s ease;
-  padding-top: 100px; /* abaixo do cabeçalho */
+
 }
 
 /* Ação para caixa check */
-#check:checked ~ ul {
+#check:checked~ul {
   right: 0;
 }
 
 /* Itens do menu */
 nav ul li {
+  list-style: none;
   padding: 20px;
   border-bottom: 1px solid var(--Azul);
   text-align: right;
@@ -114,21 +124,20 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: var(--Branco);
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: 0.3s;
 }
 
 nav ul li a:hover {
   color: var(--Azul);
+  text-decoration: none;
 }
 
 /* __________________________PRINCIPAL__________________ */
 main {
   height: 70vh;
-  background: url(img/unnamed.jpg) center/cover no-repeat;
+  background: url(img/unnamed.jpg);
   text-align: center;
-  margin-top: 100px; /* compensa header fixo */
+  background-size: cover;
+  background-position: center;
 }
 
 main .container {
@@ -146,22 +155,28 @@ main h1 {
 main h2 {
   color: #00EFEF;
   font-size: 1rem;
-  margin-bottom: 30px;
+  font-weight: 900;
 }
 
 /* __________________________DESTAQUE__________________ */
 #destaque {
+  margin-top: 0%;
   padding: 50px 10px;
-  background: url(./img/banner2.png) center/cover no-repeat;
-  min-height: 100vh;
+  background-color: #00EFEF;
+  min-height: 5vh;
+
 }
 
 #destaque .container {
   flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
 }
+
 
 #hero {
   text-align: center;
+
 }
 
 #hero img {
@@ -169,16 +184,19 @@ main h2 {
   height: 300px;
   margin-bottom: 25px;
   object-fit: contain;
+  display: none;
 }
 
 .hero-text h2 {
+  margin-top: 10px;
   font-size: 1.6rem;
-  color: var(--Branco);
+  color: var(--Preto);
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .hero-text p {
-  color: var(--Branco);
+  color: var(--Preto);
 }
 
 /* Ícones de tópicos */
@@ -195,13 +213,68 @@ main h2 {
 
 .topic p {
   margin-left: 15px;
-  color: var(--Branco);
+  color: var(--Preto);
   font-weight: 500;
 }
 
-/* __________________________FIM DO PORTRAIT_____________ */
+/*_______________________________Sobre_____________________ */
+#sobre {
+  padding: 50px 10px;
+}
 
-/* TABLET E NOTEBOOKS */
+#sobre .container{
+  flex-direction: column;
+}
+
+/* __________________Cartões______________________________ */
+#consoles{
+  background-color: var(--Preto);
+  padding: 50px 0px;
+}
+
+#consoles .container{
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* FIM DO PORTRAIT________________________________________ */
+
+
+/* Smartphone Landscape__________________________________ */
+@media (min-width: 576px) {
+
+  /* Layout */
+  .container {
+    max-width: 540px;
+  }
+
+  /* Cabeçalho */
+  nav ul {
+    width: 40%;
+    right: -40%;
+  }
+
+  /* Principal */
+  main {
+    height: 75vh;
+  }
+
+  main h1 {
+    font-size: 2.75rem;
+  }
+
+  main h2 {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* Fim - Smartphone Landscape___________________________________ */
+
+
+
+/* TABLET Portrait______________________________________________*/
 
 @media (min-width: 768px) {
   .container {
@@ -215,25 +288,51 @@ main h2 {
   main h2 {
     font-size: 2rem;
   }
+
+  #hero {
+    text-align: center;
+
+  }
+
+  #hero img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 25px;
+    object-fit: contain;
+    display: none;
+  }
 }
 
-/* NOTEBOOK / PC */
+/* Fim Tablet Portrait_______________________________________________ */
+
+
+/* Tablet Landscape__________________________________________________ */
 @media (min-width: 992px) {
+
+  /* Layout */
   .container {
     max-width: 960px;
+  }
+}
+
+/* Fim Tablet Landscape_______________________________________________ */
+
+
+/* NOTEBOOK / PC_______________________________________________________*/
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
     justify-content: space-between;
-    align-items: center;
+
   }
 
   header {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    height: 100px;
   }
 
   .logo img {
     width: 150px;
-    height: auto;
+    height: 150px;
   }
 
   /* Remove menu hamburguer no desktop */
@@ -244,10 +343,10 @@ main h2 {
   nav ul {
     position: static;
     display: flex;
-    height: auto;
-    width: auto;
+    width: 100%;
     background: none;
     padding: 0;
+    margin-top: 20px;
   }
 
   nav ul li {
@@ -288,7 +387,10 @@ main h2 {
   }
 }
 
-/* 4K */
+/* Fim do Notebook PC_________________________________________________ */
+
+
+/* 4K_________________________________________________________________ */
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
@@ -296,5 +398,8 @@ main h2 {
 
   main h1 {
     font-size: 5rem;
+    align-items: center;
   }
 }
+
+/* Fim do 4k___________________________________________________________ */
