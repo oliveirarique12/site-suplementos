@@ -48,11 +48,12 @@ body {
   background-color: var(--Branco);
   margin-top: 25px;
   border: 2px solid var(--Preto);
+  
 }
 
-.card img{
+/* .card img{ */
   /* border-radius: 25px 25px 0px 0px; */
-}
+/* } */
 .card h2{
   font-size: 1.3rem;
   margin: 15px 0px;
@@ -61,6 +62,11 @@ body {
   color: var(--Azul);
   text-align: left;
   padding: 0px 10px 30px 10px;
+  padding-left: 28px;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 /* ___________________________FIM DO LAYOUT__________________ */
 
@@ -235,6 +241,7 @@ main h2 {
 #consoles .container{
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 
@@ -266,6 +273,10 @@ main h2 {
 
   main h2 {
     font-size: 2.5rem;
+  }
+
+  #consoles .container{
+    flex-direction: column
   }
 
 }
@@ -301,6 +312,11 @@ main h2 {
     object-fit: contain;
     display: none;
   }
+
+  #consoles .container{
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* Fim Tablet Portrait_______________________________________________ */
@@ -312,6 +328,10 @@ main h2 {
   /* Layout */
   .container {
     max-width: 960px;
+    
+  }
+  #consoles .container{
+    flex-direction: row;
   }
 }
 
@@ -385,7 +405,13 @@ main h2 {
   .topic {
     display: flex;
   }
+
+  #consoles .container{
+    padding-left: 55px;
+
+  }
 }
+
 
 /* Fim do Notebook PC_________________________________________________ */
 
